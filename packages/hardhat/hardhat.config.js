@@ -66,7 +66,7 @@ module.exports = {
   networks: {
     goerli: {
       url: `https://goerli.infura.io/v3/${process.env.GOERLI_INFURA_KEY}`,
-      accounts: process.env.GOERLI_DEPLOYER_PRIV_KEY,
+      accounts: process.env.PRIVATE_KEY,
       /*
         notice no mnemonic here? it will just use account 0 of the hardhat node to deploy
         (you can put in a mnemonic here to set the deployer locally)
