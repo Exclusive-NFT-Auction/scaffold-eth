@@ -728,13 +728,15 @@ function MintedItems(props) {
       const items = [];
       for (let tokenIndex = 0; tokenIndex < theBalance; tokenIndex++) {
         const tokenId = await props.readContracts.YourCollectible.tokenOfOwnerByIndex(props.address, tokenIndex);
+        console.log(tokenId);
         const tokenURI = await props.readContracts.YourCollectible.tokenURI(tokenId);
-        const jsonManifestString = Buffer.from(tokenURI.substring(29), "base64");
-
+        console.log("get items");
+        console.log(items);
+        const image =
+          "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/" + tokenId + ".png";
+        console.log(image);
         try {
-          const jsonManifest = JSON.parse(jsonManifestString);
-          console.log("jsonManifest", jsonManifest);
-          items.push({ id: tokenId, uri: tokenURI, owner: props.address, ...jsonManifest });
+          items.push({ id: tokenId, uri: tokenURI, owner: props.address, image: image });
         } catch (e) {
           console.log(e);
         }
@@ -753,9 +755,9 @@ function MintedItems(props) {
         renderItem={item => {
           return (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-              <Card style={{ width: "400px", heigth: "200px" }}>
+              <Card style={{ width: "300px", heigth: "200px" }}>
                 <List.Item key={item.uri}>
-                  <img src={item.image} />
+                  <img src={item.image} width="200" height="200" />
                 </List.Item>
                 <Button
                   style={{ marginTop: "24px" }}
@@ -811,11 +813,10 @@ function Auction(props) {
         setEndTime(endsAt);
 
         const tokenURI = await props.readContracts.YourCollectible.tokenURI(auction.tokenId);
-        const jsonManifestString = Buffer.from(tokenURI.substring(29), "base64");
+        const image =
+          "https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/" + tokenId + ".png";
         try {
-          const jsonManifest = JSON.parse(jsonManifestString);
-          console.log("jsonManifest", jsonManifest);
-          setAuction({ id: auction.tokenId, uri: tokenURI, owner: props.address, ...jsonManifest });
+          setAuction({ id: auction.tokenId, uri: tokenURI, owner: props.address, image: image });
         } catch (e) {
           console.log(e);
         }
