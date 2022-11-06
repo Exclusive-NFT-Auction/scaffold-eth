@@ -1,5 +1,6 @@
 # Dandelion - Invite only NFT auctions
-tl;dr
+*tl;dr*
+
 Dandelion allows NFT creators and traders to set up secret and exclusive smart contract based auctions. Auction participation is only by invitation from the seller. The bids and the NFT are sealed until the auction is over.
 
 Go in as much detail as you can about what this project is. Please be as clear as possible!
