@@ -17,7 +17,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   const auction = await ethers.getContract("BlindAuction", deployer);
   console.log(auction);
-  await auction.transferOwnership("Your Address");
+  await auction.transferOwnership("0x5E113EDC0eaf00699889FC510DB121308bBA1261");
   /*
     // Getting a previously deployed contract
     const YourContract = await ethers.getContract("YourContract", deployer);

@@ -1,6 +1,6 @@
 // deploy/00_deploy_your_contract.js
 
-//const { ethers } = require("hardhat");
+// const { ethers } = require("hardhat");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy } = deployments;
@@ -13,7 +13,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
   });
 
   const yourCollectible = await ethers.getContract("YourCollectible", deployer);
-  await yourCollectible.transferOwnership("Your Address");
+  await yourCollectible.transferOwnership("0x5E113EDC0eaf00699889FC510DB121308bBA1261");
   /*
     // Getting a previously deployed contract
     await YourContract.setPurpose("Hello");

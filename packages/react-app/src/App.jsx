@@ -10,6 +10,7 @@ import "./App.css";
 import { Account, BytesStringInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
+import { useEventListener } from "eth-hooks/events/useEventListener";
 import Countdown from "react-countdown";
 import {
   useBalance,
